@@ -14,12 +14,6 @@ int hello_world_init_module(void){
     return 0;
 }
 
-
-/* Visit my Webiste : https://csepracticals.wixsite.com/csepracticals
- * for other courses for free or on discounted price. Take a look !! */
-
-
-
 /* This function shall be invoked as soon as this LKM is unloaded.
  * Note the function prototype */
 void hello_world_cleanup_module(void){
