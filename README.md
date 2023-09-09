@@ -1,9 +1,5 @@
 # KernelHelloStarter
 
-Alright! Here's your transcript turned into detailed revision notes in an unrendered markdown format suitable for a `readme.md` file on GitHub:
-
----
-
 # Linux Kernel Module Programming 🐧
 
 ## Introduction 🌟
@@ -34,7 +30,7 @@ Ready to jump into coding our first "Hello World" Linux kernel module? Simply fe
    A Linux Kernel Module is a piece of code that can be dynamically loaded and unloaded into the kernel as needed. They allow functionalities to be added to the kernel without rebooting the system or recompiling the entire kernel.
 
 2. **How is a Linux kernel module different from a regular program in terms of adding new functionalities?**  
-   Unlike regular programs, where you typically compile and rerun for new functionalities, with kernel modules, you can integrate new features on-the-go without restarting the system.
+   Unlike regular programs, where you typically compile and rerun for new functionalities, with kernel modules, you can integrate new features on the go without restarting the system.
 
 3. **Why are most device drivers written as Linux kernel modules?**  
    Device drivers are often written as kernel modules to allow flexibility. Drivers can be loaded or unloaded as required, enabling better resource management and reducing the kernel's static footprint.
