@@ -12,14 +12,14 @@ After downloading the git repository from the Udemy course on Netlink, you will 
 Let's explore a typical Linux kernel module:
 - Only **42 lines** of code for our "Hello World" demo! 🎉
 - Key components:
-    - **Header File**: Essential for writing any LCM. 📎
+    - **Header File**: Essential for writing any LKM. 📎
     - **Initialization Function**: Invoked when the module loads. Handles all initialization tasks. 🔌
     - **Cleanup Function**: Takes care of memory cleanup after module use. 🧹
     - **Registration**: Using `module init` and `module exit` functions, specify which functions act as initialization and cleanup. 🏷️
         - If omitted, the kernel defaults to `init module` and `cleanup module`.
     - **Metadata**: 
         - `module author`: Declares the module's creator. 👤
-        - Description: Briefly describes the module's function. 📝
+        - Description: Briefly describe the module's function. 📝
         - License: For instance, GPL for public license. 📜
 
 ## The Makefile 📄
@@ -31,8 +31,8 @@ Writing a `makefile` for a Linux kernel module is straightforward:
 1. **Loading**: 
     - Use `lsmod` to check modules. Your module name should appear post-insertion.
     - `sudo insmod [module_name]` inserts the module.
-    - `dmesg | tail` or `tail -f /var/log.log` to monitor real-time logs.
-2. **Running**: Any print statements within the module go to `/var/log.log`. Use `tail -f` to view these logs live.
+    - `dmesg | tail` or `journalctl -k -f` to monitor real-time logs.
+2. **Running**: Any print statements within the module go to journalctl. Use `journalctl -k -f` to view these logs live.
 3. **Unloading**: 
     - Use `sudo rmmod [module_name]` to remove the module. 
     - The module should disappear from `lsmod` once unloaded.
@@ -54,7 +54,7 @@ Writing a `makefile` for a Linux kernel module is straightforward:
    Use `sudo insmod [module_name]` to load and `sudo rmmod [module_name]` to unload.
 
 5. **Where can you see the print statements from a Linux Kernel Module in action?**  
-   Print statements from the module are directed to `/var/log.log`. You can monitor these logs in real-time using `tail -f`.
+      Any print statements within the module go to `journalctl`. Use `journalctl -k -f` to view these logs live.
 
 ---
 
